@@ -20,20 +20,19 @@
 let button = document.getElementById("submit");
 button.addEventListener("click", calculate);
 
-function calculate() {}
 
-function fullDeposit(
-  initialDepositAmount,
-  amountOfMonthlyReplenishment,
+function alertsum (
+  initialAmount,
+  MonthlyReplenishment,
   interestRate,
-  period
-) {
-  let rezult = sum;
+  period){
 
-  for (let i = 0; i < year; i++) {
-    rezult += (rezult * rate) / 100;
+  let mothlySum = (((initialAmount + MonthlyReplenishment)/100)*interestRate)/12 + initialAmount;
+  let periodSum = 
+
+  for (let i = 0; i < month; i++) {
+    rezult += (rezult * interestRate) / 100;
   }
   return rezult;
 }
-
 console.log(fullDeposit(1000, 5, 15));
