@@ -1,10 +1,9 @@
 body {
-  background-image: url(https://i7.pngguru.com/preview/335/359/589/project-management-triangle-quality-money-cost-stock-photography-time-management.jpg); /* Путь к фоновому изображению */
-  background-attachment: scroll; /* Фиксируем фон веб-страницы */
+  background-image: url(https://i7.pngguru.com/preview/335/359/589/project-management-triangle-quality-money-cost-stock-photography-time-management.jpg);
+  background-attachment: scroll;
 }
 .esc-div {
-  flex-direction: column;
-  display: flex;
+  position: relative;
   max-width: 450px;
   min-height: 220px;
   margin: 0 auto;
@@ -12,8 +11,8 @@ body {
   border: 1px solid #302f2f;
   border-radius: 7px;
   padding: 15px;
-  position: relative;
 }
+
 .esc-error {
   position: absolute;
   right: 30px;
@@ -23,9 +22,9 @@ body {
 }
 
 .esc-finalbalance {
-  /* width: 100%; */
+  width: 100%;
   position: absolute;
-  right: 20px;
+  text-align: center;
   bottom: 0;
   font-size: 24px;
   color: #146d0b;
@@ -70,7 +69,7 @@ input {
   position: absolute;
   right: 20px;
   text-align: end;
-  padding-right: 5px;
+  padding-right: 4px;
   border: 1px solid #aaa;
   border-radius: 2px;
   -moz-transition: padding 0.25s;
