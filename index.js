@@ -1,70 +1,90 @@
-// Требования
-// В качестве параметров функция должна принимать на вход:
-// Начальную сумму вклада (в валюте)
-// Сумму ежемесячного пополнения (в валюте)
-// Величину доходности по вкладу (в процентах годовых)
-// Срок вклада (дней)
+function onlyNumbers(keyinput) {
+  let input = keyinput.charCode ? keyinput.charCode : keyinput.keyCode;
+  // если не цифра и удаление
+  if (input != 8 && input != 46) {
+    if (input < 48 || input > 57) {
+      return false;
+    }
+  }
+}
+function mySavings() {
+  // обнуляй эррор
+  document.getElementById("balanceError").innerHTML = "";
+  document.getElementById("paymentError").innerHTML = "";
+  // добавил пеймент
+  document.getElementById("rateError").innerHTML = "";
+  document.getElementById("MonthsError").innerHTML = "";
 
-// При расчетах считать, что проценты начисляются ежемесячно и капитализируются (ежемесячный доход попадает на баланс и учитывается при расчете дохода в следующем месяце).
-
-// Функция должна возвращать сумму вклада на момент окончания его срока действия.
-
-// Предусмотреть проверку корректности входных данных. Корректными входными данными для функции следует считать:
-// Начальная сумма - положительно число
-// Сумма пополнения - неотрицательное число
-// Процент - положительное число (до 100)
-// Срок - положительное целое число.
-
-// В случае некорректных значений, функция выводит в консоль сообщение об ошибке и возвращать NaN.
-
-// function deposit (
-//   initialDepositAmount,
-//   amountOfMonthlyReplenishment,
-//   interestRate,
-//   period){
-
-//    let result = 0;
-  
-
-//    for (let i = 0; i < period; i++) {
-//     result = initialDepositAmount + amountOfMonthlyReplenishment + ((initialDepositAmount + amountOfMonthlyReplenishment)/100*interestRate)*Math.round(period/30);
-//     }
-//       return result;
-//     }
-          
-
-
-// console.log(deposit(1000, 100, 10, 360 )); 
-
-
-
-let button = document.getElementById("submit");
-
-function getDeposit (
-  initialDepositAmount,
-  amountOfMonthlyReplenishment,
-  interestRate,
-  period){
-    
-    let initialDepositAmount = document.getElementById("Amount").id;
-    let amountOfMonthlyReplenishment = document.getElementById("amountOfMonthlyReplenishment");
-    let interestRate = document.getElementById("interestRate");
-    let period = document.getElementById("period");
-
-   
-    let result = 0;
-  
-    for (let i = 0; i < period; i++) {
-      result = initialDepositAmount + amountOfMonthlyReplenishment + ((initialDepositAmount + amountOfMonthlyReplenishment)/100*interestRate)*Math.round(period/30);
+  // let checkBalance = document.savingscalc.balance.value;
+  // проверка валидности
+  if (
+    document.savingscalc.balance.value == null ||
+    document.savingscalc.balance.value.length == 0 ||
+    isNaN(document.savingscalc.balance.value) == true
+  ) {
+    document.getElementById("finalBalance").innerHTML =
+      "Please enter the missing information.";
+    document.getElementById("balanceError").innerHTML =
+      "Numeric value required. Example: 10000";
+  } else if (
+    document.savingscalc.payment.value == null ||
+    document.savingscalc.payment.value.length == 0 ||
+    isNaN(document.savingscalc.payment.value) == true
+  ) {
+    document.getElementById("payment").innerHTML =
+      "Please enter the missing information.";
+    document.getElementById("paymentError").innerHTML =
+      "Numeric value required. Example: 10000";
+  } else if (
+    document.savingscalc.rate.value == null ||
+    document.savingscalc.rate.value.length == 0 ||
+    isNaN(document.savingscalc.rate.value) == true
+  ) {
+    document.getElementById("finalBalance").innerHTML =
+      "Please enter the missing information.";
+    document.getElementById("rateError").innerHTML =
+      "Numeric value required. Example: 3.5";
+  } else if (
+    document.savingscalc.Months.value == null ||
+    document.savingscalc.Months.value.length == 0 ||
+    isNaN(document.savingscalc.Months.value) == true
+  ) {
+    document.getElementById("finalBalance").innerHTML =
+      "Please enter the missing information.";
+    document.getElementById("MonthsError").innerHTML =
+      "Numeric value required. Example: 10";
+  } else {
+    function toCalculate(startingbalance, payment, interestrate, days) {
+      let months = days / 30;
+      let result = 0;
+      for (i = 1; i < months; i++) {
+        startingbalance += (startingbalance * interestrate) / 1200;
+        startingbalance += payment;
       }
-        return result;
-      }
-    
-    button.addEventListener("click", getDeposit);
+      result = startingbalance;
+      return result.toFixed(2);
+    }
+    // задать переменные данных
+    let startingbalance = +document.savingscalc.balance.value;
+    let payment = +document.savingscalc.payment.value;
+    let interestrate = +document.savingscalc.rate.value;
+    let days = +document.savingscalc.Months.value;
+    let result = toCalculate(startingbalance, payment, interestrate, days);
+    // калькуляция и выдача баланса
+    document.getElementById(
+      "finalBalance"
+    ).innerHTML = `Final Balance: ${result}`;
+  }
+}
 
-
-
-
-
-
-
+function mySavingsReset() {
+  // ресет всех полей
+  document.getElementById("finalBalance").innerHTML = "Values reset";
+  document.getElementById("balanceError").innerHTML = "";
+  document.getElementById("rateError").innerHTML = "";
+  document.getElementById("MonthsError").innerHTML = "";
+  document.savingscalc.balance.value = null;
+  document.savingscalc.rate.value = null;
+  document.savingscalc.Months.value = null;
+  document.savingscalc.payment.value = null;
+}

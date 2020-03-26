@@ -1,56 +1,36 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html>
   <head>
-    <meta charset="utf-8" />
-    <title>
-      Time Deposit Calculator
-    </title>
-    <link rel="stylesheet" media="screen" href="styles.css" />
+    
+    <link rel="stylesheet" type="text/css" href="index.css" />
   </head>
 
   <body>
+    <div class="esc-div">
+        <form name=savingscalc method=POST>
+        <p>Initial Amount (AZN)<br>
+        
+            <input type=text onkeypress="return onlyNumbers(event)" name=balance size=10> <span class="esc-error" id="balanceError"></span></p>
 
 
-    
-    
-    <form class="contact_form" action="#" method="post" name="contact_form">
-      
-      
-      <ul>
-        <li>
-          <label for="initialDepositAmount"> Initial deposit amount (AZN):</label>
-          <input id=Amount type="text" placeholder="enter amount" required />
-        </li>
-       
-       
-        <li>
-          <label for="amountOfMonthlyReplenishment">Amount of monthly replenishment (AZN):</label>
-          <input id=amountOfMonthlyReplenishment placeholder="monthly" required />
-          <span class="form_hint">monthly</span>
-        </li>
+        <form name=savingscalc method=POST>
+        <p>Additional (AZN)<br>
+              
+           <input type=text onkeypress="return onlyNumbers(event)" name=payment size=10> <span class="esc-error" id="paymentError"></span></p>
 
 
-        <li>
-          <label for="interestRate">Interest rate (%):</label>
-          <input id=interestRate placeholder="% per year" required />
-        </li>
-
-
-        <li>
-          
-           <label for="period">Period (days):</label>
-           <input id=period placeholder="days" required />
-          
-        </li>
-        <li>
-          <button id="submit" type="submit">Submit Form</button>
-        </li>
-      </ul>
-    </form>
-
- 
-
-
-    <script src="index.js"></script>
+        
+            <p>Interest Rate (%)<br>
+        <input type=text onkeypress="return onlyNumbers(event)" name=rate size=5> <span class="esc-error" id="rateError"></span></p>
+        
+        <p>Period (days)<br>
+        <input type=text onkeypress="return onlyNumbers(event)" name=Months size=5> <span class="esc-error" id="MonthsError"></span></p>
+        
+        <input type=button onClick="return mySavings()" value=Calculate>  <input type=button onClick="return mySavingsReset()" value=Reset>
+        </form>
+        
+        <p class="esc-finalbalance" id="finalBalance"> </p>
+        </div>
+    <script type="text/javascript" src="index.js"></script>
   </body>
 </html>
