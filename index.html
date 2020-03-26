@@ -28,11 +28,13 @@
         <span class="esc-error" id="paymentError"></span>
 
         
-        <input
+        <select
           type="text"
           onkeypress="return onlyNumbers(event)"
           name="rate"
-          size="5">
+          class="form-control"
+          id="percentage"
+          size="5"></select>
         <p>
           Interest Rate (%)
         </p>
@@ -41,7 +43,7 @@
        
         
           <input
-            type="text"
+            type="number"
             onkeypress="return onlyNumbers(event)"
             name="Months"
             size="5"/> 

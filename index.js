@@ -8,6 +8,20 @@ function onlyNumbers(keyinput) {
     }
   }
 }
+
+function createOptions() {
+  let select = document.getElementById("percentage");
+  for (let i = 0; i <= 100; i++) {
+    let node = document.createElement("option");
+    node.innerHTML = i;
+    node.setAttribute("value", i);
+    node.setAttribute("class", "percent");
+    select.appendChild(node);
+  }
+}
+createOptions();
+
+
 function toCalculate(startingbalance, payment, interestrate, days) {
   let months = days / 30;
   for (i = 1; i <= months; i++) {
@@ -62,3 +76,5 @@ function mySavings() {
     ).innerHTML = `your final balance: <b>${result}</b>  AZN`; // калькуляция и выдача баланса
   }
 }
+
+

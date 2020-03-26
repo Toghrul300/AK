@@ -64,7 +64,7 @@ body {
   text-align: center;
   text-shadow: 0 -1px 0 #396715;
 }
-input {
+input, select {
   min-width: 200px;
   position: absolute;
   right: 20px;
@@ -76,4 +76,9 @@ input {
   -webkit-transition: padding 0.25s;
   -o-transition: padding 0.25s;
   transition: padding 0.25s;
+}
+
+select {
+  height: 20px;
+  width: 206px;
 }
