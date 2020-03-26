@@ -1,36 +1,68 @@
 <!DOCTYPE html>
-<html>
+<html lang="ru">
   <head>
-    
+    <title>Ваш калькулятор сложного процента.</title>
     <link rel="stylesheet" type="text/css" href="index.css" />
   </head>
 
   <body>
     <div class="esc-div">
-        <form name=savingscalc method=POST>
-        <p>Initial Amount (AZN)<br>
-        
-            <input type=text onkeypress="return onlyNumbers(event)" name=balance size=10> <span class="esc-error" id="balanceError"></span></p>
+      <form name="savingscalc" method="POST">
+        <p>
+          Initial Amount (AZN)
+          <input
+            type="text"
+            onkeypress="return onlyNumbers(event)"
+            name="balance"
+            size="10"
+          />
+          <span class="esc-error" id="balanceError"></span>
+        </p>
 
+        <p>
+          Additional (AZN)
 
-        <form name=savingscalc method=POST>
-        <p>Additional (AZN)<br>
-              
-           <input type=text onkeypress="return onlyNumbers(event)" name=payment size=10> <span class="esc-error" id="paymentError"></span></p>
+          <input
+            type="text"
+            onkeypress="return onlyNumbers(event)"
+            name="payment"
+            size="10"
+          />
+          <span class="esc-error" id="paymentError"></span>
+        </p>
 
+        <p>
+          Interest Rate (%)
+          <input
+            type="text"
+            onkeypress="return onlyNumbers(event)"
+            name="rate"
+            size="5"
+          />
+          <span class="esc-error" id="rateError"></span>
+        </p>
 
-        
-            <p>Interest Rate (%)<br>
-        <input type=text onkeypress="return onlyNumbers(event)" name=rate size=5> <span class="esc-error" id="rateError"></span></p>
-        
-        <p>Period (days)<br>
-        <input type=text onkeypress="return onlyNumbers(event)" name=Months size=5> <span class="esc-error" id="MonthsError"></span></p>
-        
-        <input type=button onClick="return mySavings()" value=Calculate>  <input type=button onClick="return mySavingsReset()" value=Reset>
-        </form>
-        
-        <p class="esc-finalbalance" id="finalBalance"> </p>
-        </div>
+        <p>
+          Period (days)
+          <input
+            type="text"
+            onkeypress="return onlyNumbers(event)"
+            name="Months"
+            size="5"
+          />
+          <span class="esc-error" id="MonthsError"></span>
+        </p>
+
+        <input
+          id="calculate"
+          type="button"
+          onClick="return mySavings()"
+          value="Calculate"
+        />
+      </form>
+
+      <p class="esc-finalbalance" id="finalBalance"></p>
+    </div>
     <script type="text/javascript" src="index.js"></script>
   </body>
 </html>
