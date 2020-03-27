@@ -8,26 +8,20 @@
   <body>
     <div class="esc-div">
       <form name="savingscalc" method="POST">
-        
-        
-        <input
+          <input
           type="text"
           onkeypress="return onlyNumbers(event)"
           name="balance"
           size="10"/>
           <p>Initial Amount (AZN)</p>
         <span class="esc-error" id="balanceError"></span>
-
-        
         <input
           type="text"
           onkeypress="return onlyNumbers(event)"
           name="payment"
           size="10"/>
-        <p>Additional (AZN)</p>
+        <p></p>Additional (AZN)</p>
         <span class="esc-error" id="paymentError"></span>
-
-        
         <select
           type="number"
           onkeypress="return onlyNumbers(event)"
@@ -39,25 +33,19 @@
           Interest Rate (%)
         </p>
         <span class="esc-error" id="rateError"></span>
-
-       
-        
-          <input
+        <input
             type="text"
             onkeypress="return onlyNumbers(event)"
             name="Months"
             size="5"/> 
           <p>Period (days)</p>
           <span class="esc-error" id="MonthsError"></span>
-
           <input 
             id="calculate"
             type="button"
             onClick="return mySavings()"
             value="Calculate"/>
-        
-      </form>
-
+        </form>
       <p class="esc-finalbalance" id="finalBalance"></p>
     </div>
     <script  src="index.js"></script>
