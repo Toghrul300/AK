@@ -49,7 +49,7 @@ function mySavings() {
     document.savingscalc.payment.value.length == 0 ||
     isNaN(document.savingscalc.payment.value) == true
   ) {
-    document.getElementById("payment").innerHTML =
+    document.getElementById("finalBalance").innerHTML =
       "Please enter the missing information.";
   } else if (
     document.savingscalc.rate.value == null ||
