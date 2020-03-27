@@ -29,7 +29,7 @@
 
         
         <select
-          type="text"
+          type="number"
           onkeypress="return onlyNumbers(event)"
           name="rate"
           class="form-control"
@@ -43,14 +43,14 @@
        
         
           <input
-            type="number"
+            type="text"
             onkeypress="return onlyNumbers(event)"
             name="Months"
             size="5"/> 
           <p>Period (days)</p>
           <span class="esc-error" id="MonthsError"></span>
 
-          <input
+          <input 
             id="calculate"
             type="button"
             onClick="return mySavings()"
