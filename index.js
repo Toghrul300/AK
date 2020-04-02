@@ -123,7 +123,7 @@ class Application {
     this.button.addEventListener('click', function () {
       self.callFunction();
     });
-    document.getElementById('alert-div').style.display = 'none';
+    document.getElementById('alertDisplay').style.display = 'none';
   }
   callFunction() {
     let firstAmount = this.firstAmount.value;
@@ -139,13 +139,13 @@ class Application {
     }
   }
   drawTable(resultArray, calc) {
-    const container = document.getElementById('table-div');
+    const container = document.getElementById('tableDisplay');
     // console.log(resultArray);
     if (resultArray.length == 0) {
       container.innerHTML = '';
-      document.getElementById('alert-div').style.display = 'block';
+      document.getElementById('alertDisplay').style.display = 'block';
     } else {
-      document.getElementById('alert-div').style.display = 'none';
+      document.getElementById('alertDisplay').style.display = 'none';
       let table;
       table = `<tr>
                  <th>Название Банка</th>

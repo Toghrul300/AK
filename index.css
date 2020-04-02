@@ -75,7 +75,7 @@ label {
   display: flex;
   position: relative;
 }
-#alert-div{
+#alertDisplay{
   color: #146d0b;
   width: 100%;
   text-align: center;
