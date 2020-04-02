@@ -1,46 +1,34 @@
 body {
   background-image: url(https://i7.pngguru.com/preview/335/359/589/project-management-triangle-quality-money-cost-stock-photography-time-management.jpg);
   background-attachment: scroll;
+  font-family: 'Bungee', cursive;
 }
 .esc-div {
+  font-size: small;
   position: relative;
   max-width: 450px;
-  min-height: 220px;
+  min-height: 250px;
   margin: 0 auto;
+  text-align: center;
   background-color: #f9f9f9;
   border: 1px solid #302f2f;
   border-radius: 7px;
   padding: 15px;
+  padding-top: 10px;
 }
-
-.esc-error {
-  position: absolute;
-  right: 30px;
-  font-family: Verdana, Arial, Helvetica, sans-serif;
-  font-size: 8px;
-  color: #880000;
-}
-
 .esc-finalbalance {
   width: 100%;
-  position: absolute;
   text-align: center;
-  bottom: 0;
-  font-size: 24px;
-  color: #146d0b;
+  margin-bottom: -10px;
+  font-size: 16px;
+  color: #197e0e;
 }
 #calculate {
   position: absolute;
-  width: 93%;
-  left: 15px;
+  min-width: 93%;
+  left: 17px;
   background-color: #68b12f;
-  background: -webkit-gradient(
-    linear,
-    left top,
-    left bottom,
-    from(#68b12f),
-    to(#50911e)
-  );
+  background: -webkit-gradient( linear, left top, left bottom, from(#68b12f), to(#50911e) );
   background: -webkit-linear-gradient(top, #68b12f, #50911e);
   background: -moz-linear-gradient(top, #68b12f, #50911e);
   background: -ms-linear-gradient(top, #68b12f, #50911e);
@@ -60,16 +48,15 @@ body {
   -o-box-shadow: 0 1px 0 0 #9fd574 inset;
   color: white;
   font-weight: bold;
-  /* padding: 6px 20px; */
   text-align: center;
   text-shadow: 0 -1px 0 #396715;
 }
 input, select {
-  min-width: 200px;
+  min-width: 201px;
   position: absolute;
-  right: 20px;
+  margin-top: 5px;
+  right: 5px;
   text-align: end;
-  padding-right: 4px;
   border: 1px solid #aaa;
   border-radius: 2px;
   -moz-transition: padding 0.25s;
@@ -77,8 +64,40 @@ input, select {
   -o-transition: padding 0.25s;
   transition: padding 0.25s;
 }
-
 select {
   height: 20px;
-  width: 206px;
+  width: 202px;
+}
+label {
+  font-weight: 900;
+}
+.row{
+  display: flex;
+  position: relative;
+}
+#alert-div{
+  color: #146d0b;
+  width: 100%;
+  text-align: center;
+  margin-bottom: -35px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #197e0e;
+}
+table td, table th{
+  width: 100%;
+  border-radius: 5px;
+  background-color: #dad4d4;
+  padding: 8px;
+  text-align: center;
+  font-family: 'Courier New', Courier, monospace;
+}
+table th{
+  background-color: #bbb8b8;
+}
+table {
+  margin: 5px;
+  border-collapse:separate;
+  margin-top: 20px;
+  font-weight: bolder;
 }

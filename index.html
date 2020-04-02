@@ -1,54 +1,50 @@
 <!DOCTYPE html>
 <html lang="ru">
-  <head>
-    <title>Ваш калькулятор сложного процента.</title>
-    <link rel="stylesheet" type="text/css" href="index.css" />
-  </head>
 
-  <body>
-    <div class="esc-div">
-      <form name="savingscalc" method="POST">
-          <input
-          type="text"
-          onkeypress="return onlyNumbers(event)"
-          name="balance"
-          size="10"/>
-          <p>Initial Amount (AZN)</p>
-        <span class="esc-error" id="balanceError"></span>
-        <input
-          id = "payment"
-          type="text"
-          onkeypress="return onlyNumbers(event)"
-          name="payment"
-          size="10"/>
-        <p></p>Additional (AZN)</p>
-        <span class="esc-error" id="paymentError"></span>
-        <select
-          type="number"
-          onkeypress="return onlyNumbers(event)"
-          name="rate"
-          class="form-control"
-          id="percentage"
-          size="5"></select>
-        <p>
-          Interest Rate (%)
-        </p>
-        <span class="esc-error" id="rateError"></span>
-        <input
-            type="text"
-            onkeypress="return onlyNumbers(event)"
-            name="Months"
-            size="5"/> 
-          <p>Period (days)</p>
-          <span class="esc-error" id="MonthsError"></span>
-          <input 
-            id="calculate"
-            type="button"
-            onClick="return mySavings()"
-            value="Calculate"/>
-        </form>
-      <p class="esc-finalbalance" id="finalBalance"></p>
+<head>
+  <title>Banks matching.</title>
+  <link rel="stylesheet" type="text/css" href="index.css" />
+  <link href="https://fonts.googleapis.com/css?family=Bungee|Comfortaa&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Bungee|Comfortaa&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <div class="esc-div">
+    <h1>Подбор оптимального вклада</h1>
+    <form name="savingscalc" method="POST">
+      <div class="quadro">
+        <div class="row"> <label for="amount">Начальная сумма</label>
+          <input id="start-amount" type="text" onkeypress="return onlyNumbers(event)" name="balance" />
+          <span class="esc-error" id="start-amountError"></span>
+        </div>
+        <div class="row"><label for="mounthly-amount">Сумма пополнения</label>
+          <input id="mounthly-amount" type="text" onkeypress="return onlyNumbers(event)" name="mounthlyAmount" />
+          <span class="esc-error" id="mounthly-amountError"></span>
+        </div>
+        <div class="row"><label for="period">Срок вклада</label>
+          <input id="period" type="number" min='0' onkeypress="return onlyNumbers(event)" name="months" />
+          <span class="esc-error" id="monthsError"></span>
+        </div>
+        <div class="row"><label for="type-Currency">Вальюта вклада</label>
+          <select id="type-Currency">
+            <option value="RUB">RUB</option>
+            <option value="USD">USD</option>
+          </select>
+        </div>
+      </div>
+      <input id="calculate" type="button" value="Подобрать" />
+      <div id="table-div">
+        <p class="esc-finalbalance" id="finalBalance"></p>
+      </div>
+      <div id="alert-div">
+        <p>Нет подходящих вариантов</p>
+      </div>
+    </form>
+    <div class="showResult">
     </div>
-    <script  src="index.js"></script>
-  </body>
+  </div>
+  <footer></footer>
+  <script src="index.js"></script>
+</body>
+
 </html>
