@@ -8,17 +8,6 @@ function onlyNumbers(keyinput) {
     }
   }
 }
-function createOptions() {
-  let select = document.getElementById("period");
-  for (let i = 0; i <= 1000; i++) {
-    let node = document.createElement("option");
-    node.innerHTML = i;
-    node.setAttribute("value", i);
-    node.setAttribute("class", "period");
-    select.appendChild(node);
-  }
-}
-createOptions();
 class Deposit {
   constructor(firstAmount, mounthlyAmount, period, typeCurrency) {
     this.firstAmount = firstAmount;
@@ -160,7 +149,7 @@ class Application {
                   <td>${Math.round(calc.sumDeposit(resultArray[i]))}</td>
                  </tr> `;
       }
-      // document.getElementById("finalBalance").innerHTML = ` <b>${table}</b>  `;
+      
       container.innerHTML = `<table>${table}</table>`;
     }
   }
