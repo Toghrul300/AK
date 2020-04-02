@@ -17,16 +17,16 @@
           <input id="start-amount" type="text" onkeypress="return onlyNumbers(event)" name="balance" />
           <span class="esc-error" id="start-amountError"></span>
         </div>
-        <div class="row"><label for="mounthly-amount">Сумма пополнения</label>
-          <input id="mounthly-amount" type="text" onkeypress="return onlyNumbers(event)" name="mounthlyAmount" />
-          <span class="esc-error" id="mounthly-amountError"></span>
+        <div class="row"><label for="mounthlyAmount">Сумма пополнения</label>
+          <input id="mounthlyAmount" type="text" onkeypress="return onlyNumbers(event)" name="mounthlyAmount" />
+          <span class="esc-error" id="mounthlyAmountError"></span>
         </div>
         <div class="row"><label for="period">Срок вклада</label>
           <input id="period" type="number" min='0' onkeypress="return onlyNumbers(event)" name="months" />
           <span class="esc-error" id="monthsError"></span>
         </div>
-        <div class="row"><label for="type-Currency">Вальюта вклада</label>
-          <select id="type-Currency">
+        <div class="row"><label for="choiseCurrency">Вальюта вклада</label>
+          <select id="choiseCurrency">
             <option value="RUB">RUB</option>
             <option value="USD">USD</option>
           </select>
@@ -34,7 +34,7 @@
       </div>
       <input id="calculate" type="button" value="Подобрать" />
       <div id="tableDisplay">
-        <p class="esc-finalbalance" id="finalBalance"></p>
+        <p class="escFinalbalance" id="finalBalance"></p>
       </div>
       <div id="alertDisplay">
         <p>Нет подходящих вариантов</p>

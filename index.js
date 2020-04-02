@@ -28,7 +28,7 @@ class Deposit {
   }
   checkAllFunction() {
     document.getElementById("start-amountError").innerHTML = "";
-    document.getElementById("mounthly-amountError").innerHTML = "";
+    document.getElementById("mounthlyAmountError").innerHTML = "";
     document.getElementById("monthsError").innerHTML = "";
     if (
       document.savingscalc.balance.value == null ||
@@ -115,9 +115,9 @@ class Calculator {
 class Application {
   constructor() {
     this.firstAmount = document.getElementById('start-amount');
-    this.mounthlyAmount = document.getElementById('mounthly-amount');
+    this.mounthlyAmount = document.getElementById('mounthlyAmount');
     this.period = document.getElementById('period');
-    this.typeCurrency = document.getElementById('type-Currency');
+    this.typeCurrency = document.getElementById('choiseCurrency');
     this.button = document.getElementById("calculate");
     const self = this;
     this.button.addEventListener('click', function () {
