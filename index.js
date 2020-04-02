@@ -135,10 +135,10 @@ class Application {
       let calc = new Calculator(deposit);
       calc.initialFunction(res); //список
       let resultArray = calc.filteredArray();
-      this.drawTable(resultArray, calc);
+      this.displayTable(resultArray, calc);
     }
   }
-  drawTable(resultArray, calc) {
+  displayTable(resultArray, calc) {
     const container = document.getElementById('tableDisplay');
     // console.log(resultArray);
     if (resultArray.length == 0) {
